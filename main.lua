@@ -1,3 +1,4 @@
+
 local riseoptions = {
 	CustomText = "",
 	Theme = "Rise Blend",
@@ -301,8 +302,8 @@ VapeGui["MainGui"].ScaledGui.ClickGui:GetPropertyChangedSignal("Visible"):connec
 end)
 local windowtabs = {
 	Info = guilib:CreateCategory({
-		Name = "Info",
-		Icon = "ℹ️"
+		Name = "Read",
+		Icon = "🧾"
 	})
 }
 
