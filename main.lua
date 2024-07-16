@@ -1,3 +1,4 @@
+
 local riseoptions = {
 	CustomText = "",
 	Theme = "Rise Blend",
