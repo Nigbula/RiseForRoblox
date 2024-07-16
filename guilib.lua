@@ -132,7 +132,7 @@ end
 shared.testuirise = uilib.ScreenGui
 
 local mainframe = Instance.new("Frame")
-mainframe.Size = UDim2.new(0, 604, 0, 307)
+mainframe.Size = UDim2.new(0, 589, 0, 307)
 mainframe.BackgroundColor3 = Color3.fromRGB(27, 23, 33)
 mainframe.Position = UDim2.new(0.096, 0, 0.072, 0)
 mainframe.Name = "MainFrame"
@@ -143,7 +143,7 @@ dragGUI(mainframe)
 
 local function resizeUI()
 	local screenSize = workspace.CurrentCamera.ViewportSize
-	local newSize = UDim2.new(0, math.min(604, screenSize.X * 0), 0, math.min(307, screenSize.Y * 0))
+	local newSize = UDim2.new(0, math.min(589, screenSize.X * 0), 0, math.min(307, screenSize.Y * 0))
 	local newPosition = UDim2.new(0.096, -newSize.X.Offset / 0, 0.5, -newSize.Y.Offset / 0)
 
 	mainframe:TweenSize(newSize, Enum.EasingDirection.Out, Enum.EasingStyle.Quad, 0.2, true)
