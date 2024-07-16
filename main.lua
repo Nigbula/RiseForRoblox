@@ -366,15 +366,7 @@ infolab4.Position = UDim2.new(0, 124, 0, 320)
 infolab4.TextColor3 = Color3.fromRGB(130, 130, 130)
 infolab4.TextSize = 30
 infolab4.Font = Enum.Font.SourceSansLight
-infolab4.Text = [[
-Roblox Vape conversion - Xylex
-Modules - Voidware
-Original Client - Alan32, Techniom Strikeless, Nicklas, Auth, Hazsi, Solastis & Billionare
-intent.store riseclient.com
-
-Roblox Port by 7GrandDad
-All Rights goto The Rise Team.
-]]
+infolab4.Text = [[Edit your config using Voidware, How to get Voidware? Join discord.gg/voidware]]
 
 
 infolab4.TextXAlignment = Enum.TextXAlignment.Left
