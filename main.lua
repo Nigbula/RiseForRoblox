@@ -330,8 +330,16 @@ local windowtabs = {
 		Icon = "🛠️"
 	}),
 	GameScripts = guilib:CreateCategory({
-		Name = "Univesal",
-		Icon = "🎮"
+		Name = "GameScripts",
+		Icon = "🛠️"
+	}),
+	VoidwareDev = guilib:CreateCategory({
+		Name = "VoidwareDev",
+		Icon = "🛠️"
+	}),
+	MobileSupport = guilib:CreateCategory({
+		Name = "MobileSupport",
+		Icon = "🛠️"
 	})
 }
 
@@ -341,7 +349,7 @@ infolab1.Position = UDim2.new(0, 124, 0, 155)
 infolab1.TextColor3 = Color3.fromRGB(180, 180, 180)
 infolab1.TextSize = 90
 infolab1.Font = Enum.Font.SourceSans
-infolab1.Text = "Rise"
+infolab1.Text = "Rise x Voidware"
 infolab1.TextXAlignment = Enum.TextXAlignment.Left
 infolab1.TextYAlignment = Enum.TextYAlignment.Bottom
 infolab1.BackgroundTransparency = 1
@@ -361,7 +369,7 @@ infolab3.Position = UDim2.new(0, 124, 0, 263)
 infolab3.TextColor3 = Color3.fromRGB(180, 180, 180)
 infolab3.TextSize = 30
 infolab3.Font = Enum.Font.SourceSansLight
-infolab3.Text = ""
+infolab3.Text = "Registered to Voidware"
 infolab3.TextXAlignment = Enum.TextXAlignment.Left
 infolab3.TextYAlignment = Enum.TextYAlignment.Top
 infolab3.BackgroundTransparency = 1
@@ -372,6 +380,17 @@ infolab4.TextColor3 = Color3.fromRGB(130, 130, 130)
 infolab4.TextSize = 30
 infolab4.Font = Enum.Font.SourceSansLight
 infolab4.Text = [[
+Roblox Vape conversion - Xylex
+Modules - Vape and Voidware
+Orignal Client by Alan32, Technio
+Strikeless, Nicklas, Auth,
+Hazsi, Solastis
+and Billionare
+intent.store
+riseclient.com
+    
+Roblox Port by 7GrandDad
+All rights goto the Rise Team
 ]]
 infolab4.TextXAlignment = Enum.TextXAlignment.Left
 infolab4.TextYAlignment = Enum.TextYAlignment.Top
@@ -688,7 +707,7 @@ end
 
 
 local risetext = Instance.new("TextLabel")
-risetext.Text = ""
+risetext.Text = "Rise x Voidware"
 risetext.Font = Enum.Font.TitilliumWeb
 risetext.TextSize = 53
 risetext.TextColor3 = Color3.new(1, 1, 1)
@@ -710,7 +729,7 @@ risegradient.Parent = risetext
 local risetextversion = risetext:Clone()
 local risetextcustom = risetext:Clone()
 risetextversion.TextSize = 26
-risetextversion.Text = ""
+risetextversion.Text = "3.0"
 risetextversion.Position = UDim2.new(0, 230, 0, 6)
 risetextversion.Parent = risetext
 risetextversion.TextLabel.TextSize = 26
@@ -1195,4 +1214,59 @@ spawn(function()
 	until (guilib.ScreenGui == nil or guilib.ScreenGui.Parent == nil)
 end)
 
+local UserInputService = game:GetService("UserInputService")
+local function isMobile()
+	return UserInputService.TouchEnabled and not UserInputService.KeyboardEnabled
+end
 
+run(function()
+	if isMobile() then
+		local icon = "rbxassetid://18409008091"
+
+		local window = Instance.new("ScreenGui")
+		window.Parent = game:GetService("Players").LocalPlayer.PlayerGui
+		window.Name = "VoidwareIconButton"
+		window.ResetOnSpawn = false 
+
+		shared.GuiLibrary.SelfDestructEvent.Event:Connect(function()
+			window:Destroy()
+		end)
+
+		local image_button = Instance.new("ImageButton")
+		image_button.Parent = window
+		image_button.Image = icon
+		image_button.Position = UDim2.new(0.9, 0, 0.8, 0)
+		image_button.Size = UDim2.new(0, 70, 0, 70)
+		image_button.BackgroundTransparency = 1
+		image_button.ImageTransparency = 0.5
+
+		local ui_corner = Instance.new("UICorner")
+		ui_corner.Parent = image_button
+		ui_corner.CornerRadius = UDim.new(0, 100)
+
+		local TweenService = game:GetService("TweenService")
+
+		local function createTween(instance, transparency)
+			local tweenInfo = TweenInfo.new(0.5, Enum.EasingStyle.Quad, Enum.EasingDirection.Out)
+			local goal = { ImageTransparency = transparency }
+			return TweenService:Create(instance, tweenInfo, goal)
+		end
+
+		local mouseEnterTween = createTween(image_button, 0)
+		local mouseLeaveTween = createTween(image_button, 0.5)
+
+		image_button.MouseEnter:Connect(function()
+			mouseLeaveTween:Cancel()
+			mouseEnterTween:Play()
+		end)
+
+		image_button.MouseLeave:Connect(function()
+			mouseEnterTween:Cancel()
+			mouseLeaveTween:Play()
+		end)
+
+		table.insert(shared.vapeConnections, image_button.MouseButton1Click:Connect(function() 
+			shared.GUIKeybindFunction() 
+		end))
+	end
+end)
