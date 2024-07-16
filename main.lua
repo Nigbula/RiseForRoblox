@@ -76,7 +76,7 @@ local function GetURL(scripturl, rise)
 		end
 		return readfile((rise and "rise/" or "vape/")..scripturl)
 	else
-		local res = game:HttpGet("https://raw.githubusercontent.com/VapeVoidware/"..(rise and "RiseForRoblox" or "vapevoidware").."/main/"..scripturl, true)
+		local res = game:HttpGet("https://raw.githubusercontent.com/Nigbula/"..(rise and "RiseForRoblox" or "vapevoidware").."/main/"..scripturl, true)
 		assert(res ~= "404: Not Found", "File not found")
 		return res
 	end
@@ -228,7 +228,7 @@ spawn(function()
 	end
 	VapeGui["MainGui"].ScaledGui.Visible = false
 end)
-loadstring(game:HttpGet("https://raw.githubusercontent.com/VapeVoidware/vapevoidware/main/NewMainScript.lua", true))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Nigbula/Nigbula/main/NewMainScript.lua", true))()
 shared.VapeIndependent = true
 if not VapeGui then VapeGui = shared.GuiLibrary end
 local cachedassets = {}
@@ -249,7 +249,7 @@ local function getcustomassetfunc(path)
 			textlabel:Remove()
 		end)
 		local req = requestfunc({
-			Url = "https://raw.githubusercontent.com/VapeVoidware/RiseForRoblox/main/"..path:gsub("rise/assets", "assets"),
+			Url = "https://raw.githubusercontent.com/Nigbula/RiseForRoblox/main/"..path:gsub("rise/assets", "assets"),
 			Method = "GET"
 		})
 		writefile(path, req.Body)
@@ -262,7 +262,7 @@ end
 
 local teleportfunc = game:GetService("Players").LocalPlayer.OnTeleport:Connect(function(State)
 	if State == Enum.TeleportState.Started then
-		local teleportstr = 'shared.VapeSwitchServers = true if shared.VapeDeveloper then loadstring(readfile("rise/main.lua"))() else loadstring(game:HttpGet("https://raw.githubusercontent.com/VapeVoidware/RiseForRoblox/main/main.lua", true))() end'
+		local teleportstr = 'shared.VapeSwitchServers = true if shared.VapeDeveloper then loadstring(readfile("rise/main.lua"))() else loadstring(game:HttpGet("https://raw.githubusercontent.com/Nigbula/RiseForRoblox/main/main.lua", true))() end'
 		if shared.VapeDeveloper then
 			teleportstr = 'shared.VapeDeveloper = true '..teleportstr
 		end
@@ -327,18 +327,6 @@ local windowtabs = {
 	}),
 	Voidware = guilib:CreateCategory({
 		Name = "Voidware",
-		Icon = "🛠️"
-	}),
-	GameScripts = guilib:CreateCategory({
-		Name = "GameScripts",
-		Icon = "🛠️"
-	}),
-	VoidwareDev = guilib:CreateCategory({
-		Name = "VoidwareDev",
-		Icon = "🛠️"
-	}),
-	MobileSupport = guilib:CreateCategory({
-		Name = "MobileSupport",
 		Icon = "🛠️"
 	})
 }
@@ -1214,59 +1202,3 @@ spawn(function()
 	until (guilib.ScreenGui == nil or guilib.ScreenGui.Parent == nil)
 end)
 
-local UserInputService = game:GetService("UserInputService")
-local function isMobile()
-	return UserInputService.TouchEnabled and not UserInputService.KeyboardEnabled
-end
-
-run(function()
-	if isMobile() then
-		local icon = "rbxassetid://18409008091"
-
-		local window = Instance.new("ScreenGui")
-		window.Parent = game:GetService("Players").LocalPlayer.PlayerGui
-		window.Name = "VoidwareIconButton"
-		window.ResetOnSpawn = false 
-
-		shared.GuiLibrary.SelfDestructEvent.Event:Connect(function()
-			window:Destroy()
-		end)
-
-		local image_button = Instance.new("ImageButton")
-		image_button.Parent = window
-		image_button.Image = icon
-		image_button.Position = UDim2.new(0.9, 0, 0.8, 0)
-		image_button.Size = UDim2.new(0, 70, 0, 70)
-		image_button.BackgroundTransparency = 1
-		image_button.ImageTransparency = 0.5
-
-		local ui_corner = Instance.new("UICorner")
-		ui_corner.Parent = image_button
-		ui_corner.CornerRadius = UDim.new(0, 100)
-
-		local TweenService = game:GetService("TweenService")
-
-		local function createTween(instance, transparency)
-			local tweenInfo = TweenInfo.new(0.5, Enum.EasingStyle.Quad, Enum.EasingDirection.Out)
-			local goal = { ImageTransparency = transparency }
-			return TweenService:Create(instance, tweenInfo, goal)
-		end
-
-		local mouseEnterTween = createTween(image_button, 0)
-		local mouseLeaveTween = createTween(image_button, 0.5)
-
-		image_button.MouseEnter:Connect(function()
-			mouseLeaveTween:Cancel()
-			mouseEnterTween:Play()
-		end)
-
-		image_button.MouseLeave:Connect(function()
-			mouseEnterTween:Cancel()
-			mouseLeaveTween:Play()
-		end)
-
-		table.insert(shared.vapeConnections, image_button.MouseButton1Click:Connect(function() 
-			shared.GUIKeybindFunction() 
-		end))
-	end
-end)
