@@ -328,6 +328,10 @@ local windowtabs = {
 	Voidware = guilib:CreateCategory({
 		Name = "Voidware",
 		Icon = "🛠️"
+	}),
+	GameScripts = guilib:CreateCategory({
+		Name = "Univesal",
+		Icon = "🎮"
 	})
 }
 
@@ -1202,4 +1206,4 @@ spawn(function()
 	until (guilib.ScreenGui == nil or guilib.ScreenGui.Parent == nil)
 end)
 
-print("Rise Mobile Loaded")
+
