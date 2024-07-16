@@ -1,7 +1,7 @@
 
 local riseoptions = {
 	CustomText = "",
-	Theme = "Rise Blend",
+	Theme = "Rise",
 	RenderToggle = true,
 	ShowRenderModules = true,
 	NameTags = false,
@@ -312,7 +312,7 @@ infolab1.Size = UDim2.new(0, 200, 0, 70)
 infolab1.Position = UDim2.new(0, 124, 0, 155)
 infolab1.TextColor3 = Color3.fromRGB(180, 180, 180)
 infolab1.TextSize = 90
-infolab1.Font = Enum.Font.SourceSans
+infolab1.Font = Enum.Font.FredokaOne
 infolab1.Text = "Rise"
 infolab1.TextXAlignment = Enum.TextXAlignment.Left
 infolab1.TextYAlignment = Enum.TextYAlignment.Bottom
@@ -322,8 +322,8 @@ infolab2.Size = UDim2.new(0, 200, 0, 70)
 infolab2.Position = UDim2.new(0, 250, 0, 136)
 infolab2.TextColor3 = Color3.fromRGB(130, 130, 130)
 infolab2.TextSize = 40
-infolab2.Font = Enum.Font.SourceSans
-infolab2.Text = "mobile"
+infolab2.Font = Enum.Font.FredokaOne
+infolab2.Text = "Game Optimizer"
 infolab2.TextXAlignment = Enum.TextXAlignment.Left
 infolab2.TextYAlignment = Enum.TextYAlignment.Top
 infolab2.BackgroundTransparency = 1
@@ -332,8 +332,8 @@ infolab3.Size = UDim2.new(0, 200, 0, 70)
 infolab3.Position = UDim2.new(0, 124, 0, 263)
 infolab3.TextColor3 = Color3.fromRGB(180, 180, 180)
 infolab3.TextSize = 30
-infolab3.Font = Enum.Font.SourceSansLight
-infolab3.Text = "Optimized for mobile"
+infolab3.Font = Enum.Font.FredokaOne
+infolab3.Text = "Fan loader for Voidware"
 infolab3.TextXAlignment = Enum.TextXAlignment.Left
 infolab3.TextYAlignment = Enum.TextYAlignment.Top
 infolab3.BackgroundTransparency = 1
@@ -343,7 +343,13 @@ infolab4.Position = UDim2.new(0, 124, 0, 320)
 infolab4.TextColor3 = Color3.fromRGB(130, 130, 130)
 infolab4.TextSize = 30
 infolab4.Font = Enum.Font.SourceSansLight
-infolab4.Text = [[Edit your config using Voidware, How to get Voidware? Join discord.gg/voidware]]
+infolab4.Text = [[Edit your config using Voidware,
+How to get Voidware? Join
+discord.gg/voidware
+
+This is useful for mobile users
+that lag alot when using
+normal (vape) ]]
 
 
 infolab4.TextXAlignment = Enum.TextXAlignment.Left
