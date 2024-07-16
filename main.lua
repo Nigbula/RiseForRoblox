@@ -1202,4 +1202,4 @@ spawn(function()
 	until (guilib.ScreenGui == nil or guilib.ScreenGui.Parent == nil)
 end)
 
-
+print("Rise Mobile Loaded")
