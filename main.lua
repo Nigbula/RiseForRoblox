@@ -321,26 +321,26 @@ local windowtabs = {
 		Name = "World",
 		Icon = "🌎"
 	}),
-	Info = guilib:CreateCategory({
-		Name = "Info",
-		Icon = "ℹ️"
-	}),
+	--Info = guilib:CreateCategory({
+		--Name = "Info",
+		--Icon = "ℹ️"
+	--}),
 	Voidware = guilib:CreateCategory({
 		Name = "Voidware",
 		Icon = "🛠️"
 	}),
 	GameScripts = guilib:CreateCategory({
-		Name = "GameScripts",
-		Icon = "🛠️"
-	}),
-	VoidwareDev = guilib:CreateCategory({
-		Name = "VoidwareDev",
-		Icon = "🛠️"
-	}),
-	MobileSupport = guilib:CreateCategory({
-		Name = "MobileSupport",
-		Icon = "🛠️"
+		Name = "Univesal",
+		Icon = "🎮"
 	})
+	--VoidwareDev = guilib:CreateCategory({
+		--Name = "VoidwareDev",
+		--Icon = "🛠"
+	--})
+	--MobileSupport = guilib:CreateCategory({
+		--Name = "MobileSupport",
+		--Icon = "🛠️"
+	--})
 }
 
 local infolab1 = windowtabs.Info:CreateLabel()
@@ -707,7 +707,7 @@ end
 
 
 local risetext = Instance.new("TextLabel")
-risetext.Text = "Rise x Voidware"
+risetext.Text = ""
 risetext.Font = Enum.Font.TitilliumWeb
 risetext.TextSize = 53
 risetext.TextColor3 = Color3.new(1, 1, 1)
@@ -729,7 +729,7 @@ risegradient.Parent = risetext
 local risetextversion = risetext:Clone()
 local risetextcustom = risetext:Clone()
 risetextversion.TextSize = 26
-risetextversion.Text = "3.0"
+risetextversion.Text = ""
 risetextversion.Position = UDim2.new(0, 230, 0, 6)
 risetextversion.Parent = risetext
 risetextversion.TextLabel.TextSize = 26
