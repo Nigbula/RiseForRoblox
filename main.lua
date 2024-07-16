@@ -293,9 +293,9 @@ VapeGui["MainGui"].ScaledGui.ClickGui:GetPropertyChangedSignal("Visible"):connec
 		game:GetService("RunService"):SetRobloxGuiFocused(false)	
 	end)
 	if VapeGui["MainGui"].ScaledGui.ClickGui.Visible then
-		guilib.ScreenGui.MainFrame.Size = UDim2.new(0, 664, 0, 560)
+		guilib.ScreenGui.MainFrame.Size = UDim2.new(0, 589, 0, 307)
 		guilib.ScreenGui.MainFrame.Position = UDim2.new(0.096, 0, 0.072, 0)
-		guilib.ScreenGui.MainFrame:TweenSize(UDim2.new(0, 604, 0, 307), Enum.EasingDirection.InOut, Enum.EasingStyle.Sine, 0, true)
+		guilib.ScreenGui.MainFrame:TweenSize(UDim2.new(0, 589, 0, 307), Enum.EasingDirection.InOut, Enum.EasingStyle.Sine, 0, true)
 		guilib.ScreenGui.MainFrame:TweenPosition(UDim2.new(0.096, 0, 0.072, 0), Enum.EasingDirection.InOut, Enum.EasingStyle.Sine, 0, true)
 	end
 end)
@@ -320,21 +320,25 @@ local windowtabs = {
 		Name = "World",
 		Icon = "🌎"
 	}),
-	--Info = guilib:CreateCategory({
-	--	Name = "Info",
-	--	Icon = "ℹ️"
---	}),
+	Info = guilib:CreateCategory({
+		Name = "Info",
+		Icon = "ℹ️"
+	}),
 	Voidware = guilib:CreateCategory({
 		Name = "Voidware",
 		Icon = "🛠️"
 	}),
 	GameScripts = guilib:CreateCategory({
-		Name = "Universal",
-		Icon = "🎮"
+		Name = "GameScripts",
+		Icon = "🛠️"
 	}),
 	VoidwareDev = guilib:CreateCategory({
-		Name = "Beta",
-		Icon = "✨"
+		Name = "VoidwareDev",
+		Icon = "🛠️"
+	}),
+	MobileSupport = guilib:CreateCategory({
+		Name = "MobileSupport",
+		Icon = "🛠️"
 	})
 }
 
@@ -344,7 +348,7 @@ infolab1.Position = UDim2.new(0, 124, 0, 155)
 infolab1.TextColor3 = Color3.fromRGB(180, 180, 180)
 infolab1.TextSize = 90
 infolab1.Font = Enum.Font.SourceSans
-infolab1.Text = "Rise"
+infolab1.Text = "Rise x Voidware"
 infolab1.TextXAlignment = Enum.TextXAlignment.Left
 infolab1.TextYAlignment = Enum.TextYAlignment.Bottom
 infolab1.BackgroundTransparency = 1
@@ -354,7 +358,7 @@ infolab2.Position = UDim2.new(0, 250, 0, 136)
 infolab2.TextColor3 = Color3.fromRGB(130, 130, 130)
 infolab2.TextSize = 40
 infolab2.Font = Enum.Font.SourceSans
-infolab2.Text = "Mobile"
+infolab2.Text = "roblox"
 infolab2.TextXAlignment = Enum.TextXAlignment.Left
 infolab2.TextYAlignment = Enum.TextYAlignment.Top
 infolab2.BackgroundTransparency = 1
@@ -702,7 +706,7 @@ end
 
 
 local risetext = Instance.new("TextLabel")
-risetext.Text = ""
+risetext.Text = "Rise x Voidware"
 risetext.Font = Enum.Font.TitilliumWeb
 risetext.TextSize = 53
 risetext.TextColor3 = Color3.new(1, 1, 1)
@@ -724,7 +728,7 @@ risegradient.Parent = risetext
 local risetextversion = risetext:Clone()
 local risetextcustom = risetext:Clone()
 risetextversion.TextSize = 26
-risetextversion.Text = ""
+risetextversion.Text = "3.0"
 risetextversion.Position = UDim2.new(0, 230, 0, 6)
 risetextversion.Parent = risetext
 risetextversion.TextLabel.TextSize = 26
